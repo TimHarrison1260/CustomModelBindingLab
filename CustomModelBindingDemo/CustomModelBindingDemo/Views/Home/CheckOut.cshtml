@@ -1,0 +1,13 @@
+﻿@model CustomModelBindingDemo.Models.ShoppingCart
+
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+<h2>CheckOut</h2>
+<h3>The following items would be added to an order</h3>
+@foreach(string item in Model.Items)
+{
+    @item<br />
+}
+

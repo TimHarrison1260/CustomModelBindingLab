@@ -1,0 +1,25 @@
+﻿@model CustomModelBindingDemo.Models.Card
+
+@{
+    ViewBag.Title = "DateForm";
+}
+
+<h2>DateForm</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(m => m.CardNo) 
+        @Html.EditorFor(m => m.CardNo)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Code) 
+        @Html.EditorFor(m => m.Code)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Expiry)<br /> 
+        Month:@Html.TextBoxFor(m => m.Expiry.Value.Month, new { style = "width:50px" })  
+        Year:@Html.TextBoxFor(m => m.Expiry.Value.Year, new { style = "width:50px" })
+    </p>
+    <p><input type="submit" value="Save" /></p>
+}
+

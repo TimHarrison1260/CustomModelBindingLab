@@ -1,0 +1,18 @@
+﻿@model CustomModelBindingDemo.Models.Card
+
+@{
+    ViewBag.Title = "ShowDate";
+}
+
+<h2>ShowCard</h2>
+<h3>The following data would be saved:</h3>
+<p>
+@Html.LabelFor(m=>m.CardNo): @Model.CardNo
+</p>
+<p>
+@Html.LabelFor(m=>m.Code): @Model.Code
+</p>
+<p>
+@Html.LabelFor(m=>m.Expiry): @Model.Expiry
+</p>
+

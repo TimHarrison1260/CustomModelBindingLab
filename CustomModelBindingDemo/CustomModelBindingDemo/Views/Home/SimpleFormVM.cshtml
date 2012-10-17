@@ -1,0 +1,17 @@
+﻿@model CustomModelBindingDemo.ViewModels.MemberViewModel
+
+@{
+    ViewBag.Title = "SimpleFormVM";
+}
+
+<h2>SimpleFormVM</h2>
+@using (Html.BeginForm())
+{
+    <p>@Html.LabelFor(m => m.Member.FirstName) 
+       @Html.EditorFor(m => m.Member.FirstName)
+    </p>
+    <p>@Html.LabelFor(m => m.Member.LastName) 
+       @Html.EditorFor(m => m.Member.LastName)
+    </p>
+    <p><input type="submit" value="Save" /></p>
+}

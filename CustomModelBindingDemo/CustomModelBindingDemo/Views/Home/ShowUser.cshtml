@@ -1,0 +1,30 @@
+﻿@using CustomModelBindingDemo.Models
+@model User
+
+@{
+    ViewBag.Title = "ShowUser";
+}
+
+<h2>ShowUser</h2>
+<h3>The following data would be saved:</h3>
+<p>
+@Html.LabelFor(m=>m.FirstName): @Model.FirstName
+</p>
+<p>
+@Html.LabelFor(m=>m.LastName): @Model.LastName
+</p>
+<p>
+@Html.LabelFor(m=>m.DateOfBirth): 
+@Model.DateOfBirth
+</p>
+<p>
+@Html.LabelFor(m=>m.IsApproved): 
+@Model.IsApproved
+</p>
+<p>
+@Html.LabelFor(m=>m.Roles):<br />
+@foreach (Role role in Model.Roles)
+{
+    @role.RoleName<br />
+}
+</p>

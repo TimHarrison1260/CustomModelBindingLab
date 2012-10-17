@@ -1,0 +1,45 @@
+﻿@model CustomModelBindingDemo.Models.User
+
+@{
+    ViewBag.Title = "ComplexObjectForm";
+}
+
+<h2>ComplexObjectForm</h2>
+@using (Html.BeginForm("ComplexObjectForm","Home"))
+{
+    <p>
+       @Html.LabelFor(m => m.FirstName) 
+       @Html.EditorFor(m => m.FirstName)
+    </p>
+    <p>
+       @Html.LabelFor(m => m.LastName) 
+       @Html.EditorFor(m => m.LastName)
+    </p>
+    <p>
+       @Html.LabelFor(m => m.DateOfBirth) 
+       @*<input id="dateofbirth" class="date-field" name="DateOfBirth" type="text" />*@
+        <br />
+        Day
+        <input id="birthDay" class="input" name="birthDay" type="text" />
+        Month
+        <input id="birthMonth" class="input" name="birthMonth" type="text" />
+        Year
+        <input id="birthYear" class="input" name="birthYear" type="text" />
+    </p>
+    <p>
+       <input name="roles" type="checkbox" value="Manager" /> Manager<br />
+       <input name="roles" type="checkbox" value="Editor" /> Editor<br />
+       <input name="roles" type="checkbox" value="Contributor" /> Contributor<br />
+    </p>
+    <p><input type="submit" /></p>
+}
+
+<script type="text/javascript">
+    $().ready(function () {
+        $('#dateofbirth').datepicker({
+            dateFormat: 'MM d, yy',
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
